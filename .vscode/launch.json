@@ -1,0 +1,44 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-ServicioEurekaApplication<servicio-eureka>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "co.edu.ucentral.app.servicio.eureka.ServicioEurekaApplication",
+      "projectName": "servicio-eureka",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ServicioZuulApplication<servicio-zuul>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "co.edu.ucentral.serviciozuul.ServicioZuulApplication",
+      "projectName": "servicio-zuul",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ServicioInventarioApplication<servicio-inventarios>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "co.edu.ucentral.app.servicio.inventario.ServicioInventarioApplication",
+      "projectName": "servicio-inventarios",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ServicioUsuarioApplication<servicio-usuario>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "co.edu.ucentral.app.usuario.ServicioUsuarioApplication",
+      "projectName": "servicio-usuario",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
