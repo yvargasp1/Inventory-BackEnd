@@ -1,0 +1,3 @@
+Se debe crear la base de datos ->> inventarios
+
+antes del despliegue, y posterior mente al ejecutar el servicio se crea automaticamente las tablas y su relacion.
