@@ -46,4 +46,10 @@ public ResponseEntity<?> listarporNombre(@PathVariable String term){
 		return ResponseEntity.ok().body(service.findUsuariobyNombre(term));
 	}
 
+		@GetMapping("/fiter-role")
+public ResponseEntity<?> listarRole(){
+		System.out.println(ResponseEntity.ok().body(service.findAll())); 
+		return null;
+	}
+
 }

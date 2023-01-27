@@ -34,6 +34,7 @@ public class CommonController<E,S extends CommonService<E>> {
 	}
 	@GetMapping("/pagina")
 	public ResponseEntity<?> listar(Pageable pageable){
+		System.out.println(pageable);
 		return ResponseEntity.ok().body(service.findAll(pageable));
 	}
 	
@@ -70,6 +71,8 @@ public class CommonController<E,S extends CommonService<E>> {
 		Map<String,Object> errores = new HashMap<>();
 		result.getFieldErrors().forEach(err ->{
 			errores.put(err.getField(),err.getField()+""+err.getDefaultMessage());
+		System.err.println(errores);
+		
 		});
 		return ResponseEntity.badRequest().body(errores);
 	}

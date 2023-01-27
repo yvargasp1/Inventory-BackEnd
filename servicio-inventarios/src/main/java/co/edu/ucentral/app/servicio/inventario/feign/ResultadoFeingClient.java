@@ -7,7 +7,8 @@ import co.edu.ucentral.commoninventarios.model.Inventario;
 
 public interface ResultadoFeingClient {
 	
-	@GetMapping("/{id}/estudiante/{idexamen}/examen")
-	public Inventario Consultarnotal(@PathVariable Long id);
+	//REST con otros servicios
+	@GetMapping("/{id}/x/{x}/x")
+	public Inventario x(@PathVariable Long id);
 
 }

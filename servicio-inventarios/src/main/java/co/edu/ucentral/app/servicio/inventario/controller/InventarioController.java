@@ -1,8 +1,12 @@
 package co.edu.ucentral.app.servicio.inventario.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -34,11 +38,25 @@ public class InventarioController extends CommonController<Inventario, Inventari
 	
 	@PostMapping("/crear-con-foto")
 	public ResponseEntity<?> crearConImagen(@Valid  Inventario Inventario,BindingResult result, @RequestParam MultipartFile archivo) throws IOException{
+
+		System.err.println(archivo);
 		if(!archivo.isEmpty()) {
+/* 
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE, d MMM yyyy", Locale.ENGLISH);
+   Date dateTime = Date.parse( Inventario.getCreateAt().toString());
+
+			    Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);  
+							 */
+/* 			Inventario.setCreateAt(dateTime);
+			System.out.println(dateTime); */
 			Inventario.setImagen(archivo.getBytes());
 		}
 		
-		return super.crear(Inventario, result);
+	
+				return super.crear(Inventario, result);
+			
+
+	
 	}
 	@PutMapping("editar-con-foto/{id}")
 	public ResponseEntity<?> editarConFoto(@Valid  Inventario Inventario,BindingResult result, @PathVariable Long id, @RequestParam MultipartFile archivo) throws IOException{
@@ -78,7 +96,7 @@ public class InventarioController extends CommonController<Inventario, Inventari
 	
 	
 	
-/* 	@GetMapping("/uploads/img/{id}")
+	@GetMapping("/uploads/img/{id}")
 	public ResponseEntity<?> verImagen(@PathVariable Long id){
 		Optional<Inventario> optional = service.findById(id);
 		if(!optional.isPresent() || optional.get().getImagen() ==null) {
@@ -87,7 +105,7 @@ public class InventarioController extends CommonController<Inventario, Inventari
 		Resource img = new ByteArrayResource(optional.get().getImagen());
 		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(img);
 	}
- */
+ 
 	
 	
 	

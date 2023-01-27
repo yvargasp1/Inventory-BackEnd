@@ -24,6 +24,8 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -52,7 +54,7 @@ public class Inventario implements Serializable {
 	@JoinColumn(name = "idusuarios")
 	private Usuario usuario;
  @NotNull ( message= "whatever")
-	@JsonFormat(pattern="yyyy-MM-dd")
+@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date createAt;
 
 	
@@ -96,7 +98,6 @@ public class Inventario implements Serializable {
 	}
 
 @Lob
-	@JsonIgnore
 	private byte[] imagen; 
 
 	public static long getSerialversionuid() {
